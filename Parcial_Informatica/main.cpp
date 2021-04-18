@@ -31,6 +31,7 @@ void verificar(char matriz [8][8]){
         cout<<endl;
     }
     cout<<endl;
+//integracion al repositorio
 }
 void imagen(char matriz[8][8]){
     for( int i=0; i<8;i++){
