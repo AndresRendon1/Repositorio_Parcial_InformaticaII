@@ -3,7 +3,7 @@
 \usepackage[spanish]{babel}
 \usepackage{listings}
 \usepackage{graphicx}
-\graphicspath{ {images/} }
+\graphicspath{ {images/}}
 \usepackage{cite}
 
 \begin{document}
@@ -70,15 +70,17 @@ La solucion propuesta es hacer que el usuario sea quien incorpore el patron que 
 \space
 
  -------------------------------------------------------------------
-*codigo de c++*
 
 
 Luego pensamos el montaje del arduino y todos sus componentes en el cual por medio de un transistor que estara configurado como un switch haciendo que los leds se enciendan o apaguen, dependiendo de lo ingresado por el usuario, estipulado por una determinada señal, con el objetivo de mostrar el patron ingresado.
  \vspace{1cm}
 Por consecuente se tiene el codigo funcionando en c++, empezamos a plantear la contruccion del sistema en Tinkercar, cambiando el codigo en lenguaje de c++ al lenguaje de programacion que se maneja en Tinkercar.
- \vspace{1cm}
 
-*Imagen del arduino*
+
+
+ 
+  \vspace{5cm}
+ 
 
 
 
@@ -89,19 +91,21 @@ Por consecuente se tiene el codigo funcionando en c++, empezamos a plantear la c
 
 \subsection{Algoritmo implementado}
 
-blablabla
+*Codigo c++*
+*definicion de los puertos*
+*funciones y configuracion de pines*
 
  \vspace{1cm}
  
-blablabla
+
 
  \vspace{1cm}
  
-blablabla
+
 
  \vspace{1cm}
  
-blablalba 
+
 
  \vspace{1cm}
 
@@ -113,12 +117,23 @@ blablalba
 Al empezar el montaje del sistema en tinkercar, hubo muchos errores en la conexion de los componentes, obligandonos a recrear en varias ocasiones la reestructuracion del sistema.
  \vspace{1cm}
  
- Teniendo el codigo en c++ 
+ (Problemas presentados) Al principio ibamos a usar 8 integrados para las filas y 8 integrados para controlar las señales de las coumnas pero luego de analizarlo, nos dimos cuenta que no seria una forma factible para su desarrollo, ya que era mas complicado la manipulacion del pulso y los datos de entrada, a travez del pin de datos "SER"
+No entendimos como conectar la matriz al comienzo, por lo que buscabamos los diagramas estematicos de los leds. 
+*Imagen del arduino con sus componentes de fondo negro*
+
+Hubo dificultad el como encender los leds, la deficinion de matener el led encendido.
+
+hubo dificultades en el entendimiento del integrado, ya que no contabamos con la experiencia de la electronica y con un programa como arduino.
+
+
+ \vspace{1cm}
+ (Problema)
+ Posteriormente pensamos implementar transistores con el objetivo de poder switchear la señal para indicar cual led iba a prender, pero se nos fue indicado que no era permitido.
  
- Integrado
+
+
  
- Datos puerto serial, por el integrado, se hace la interpretacion binaria de... integrado se encarga de encender o apagar el leds
-Integrado manipula la cadena a traves de pulsos, diciendo cuales se encienden y apagan
+
 
 
 
@@ -126,15 +141,35 @@ Integrado manipula la cadena a traves de pulsos, diciendo cuales se encienden y 
 
 \subsection{Solucion a problematicas presentadas}
 
-blablabla 
+ Luego decidimos usar 8 integrados para controlar las 8 filas de la matriz, usando 3 pines digitales del arduino para el control de la señal, para controlar las señales que recibe el integrado.
+ Cada integrado usara la salida inversa de la anterior como dato de entrada del integrado siguiente, excepto el ultimo que tiene el pin de salida inversa libre.
+ Mas adelante se empezo a realizar la codificacion y configuration de los puertos del arduino como salidas digitales. 
+
+
+
+  \vspace{1cm}
+ 
+\begin{figure}[h]
+\includegraphics[width=10cm]{Tinkercar.jpeg}
+\centering
+\caption{Tinkercar}
+\label{fig:gestion}
+\end{figure}
+
+
+ 
+ \vspace{1cm}
+ 
+  *Pines integrado 1 y 2*
 
 \vspace{1cm}
 
-blablabla
 
 \vspace{8cm}
 \section{Conclusión} \label{conclulsion}
-blablalbalba
+
+
+
 
 \vspace{1cm}
 
