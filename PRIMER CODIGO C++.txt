@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+int ***matriz_dinamica;
+int a;
+void InicializacionMemoria();
+void datos_matriz();
+void imprimir();
+void imagen();
+void imprimir();
+
+
+int main()
+{
+
+    cout << "PARCIAL INFORMATICA II 2021" << endl;
+    cout<<"Cantidad de caracteres: ";cin>>a;
+    InicializacionMemoria();
+    datos_matriz();
+    imprimir();
+    imagen();
+    imprimir();
+
+
+
+    delete [] matriz_dinamica;
+}
+
+
+void InicializacionMemoria(){
+    matriz_dinamica=new int**[a];
+        for(int i=0;i<8;i++){
+        matriz_dinamica[i]=new int*[8];
+        for(int j=0;j<8;j++){
+            matriz_dinamica[i][j]=new int[8];
+            }
+        }
+}
+
+void datos_matriz(){
+    int b=1;//Ingresar los datos para el patron
+    for(int k=0;k<a;k++){ //Cantidad de caracteres
+        cout<<"Ingrese el patron del caracter #"<<b<<endl;
+        b++;
+        for(int i=0;i<8;i++){ //Filas
+            for(int j=0;j<8;j++){ //Columnas
+                cout<<"Ingrese el valor de la posicion: "<<"[ "<<i<<" ]"<<"[ "<<j<<" ]: ";
+                cin>>matriz_dinamica[k][j][i]; //Irlos colocando
+            }
+        }
+        cout<<endl<<"---------------------------------------------"<<endl;
+    }
+}
+
+void imprimir(){ //imprimir
+    int b=1;
+    for (int k=0; k<a; k++){//Cantidad de caracteres
+        cout<<"Patron del caracter #"<<b<<endl;
+        b++;
+    for(int i=0;i<8;i++){ //Filas
+        for(int j=0;j<8;j++){ //Columnas
+            cout<<"["<<matriz_dinamica[k][i][j]<<"]"; //muestre lo que hay en la matriz
+        }
+        cout<<endl;
+        }
+        cout<<endl<<"-------------------------------------------"<<endl;
+    }
+
+}
+
+void imagen(){ //Patron
+    for(int k=0; k<a; k++){ //cantidad de caracteres
+    for( int i=0; i<8;i++){ //flas
+        for(int j=0; j<8 ; j++){ //columnas
+            if (matriz_dinamica[k][i][j]==49) matriz_dinamica[k][i][j]='*'; //convertir en *
+            else matriz_dinamica[k][i][j]=' ';
+        }
+    }
+    }
+}
